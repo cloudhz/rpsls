@@ -24,16 +24,27 @@ WINNER_LOOKUPS = {
         'lose' : ['lizard', 'paper']
     }
 }
+SCORE = {
+    'win' : 0,
+    'lose': 0,
+    'tie': 0
+}
+
+def update_score(result):
+    SCORE[result] += 1
 
 def random_choice():
     return random.sample(VALID_CHOICES, 1)[0]
 
 def pick_winner(user_choice, random_choice):
     if random_choice in WINNER_LOOKUPS[user_choice]['win']:
+        update_score('win')
         return 'You win!'
     elif random_choice in WINNER_LOOKUPS[user_choice]['lose']:
+        update_score('lose')
         return 'The computer wins!'
     else:
+        update_score('tie')
         return 'Draw!'
 
 def main():
@@ -48,6 +59,8 @@ def main():
             else:
                 print "Please choose a valid move."
         except KeyboardInterrupt:
+            print '\n'
+            print 'Wins: ', SCORE['win'], 'Losses: ', SCORE['lose'], 'Ties: ', SCORE['tie']
             break
 
 if __name__  == '__main__':
