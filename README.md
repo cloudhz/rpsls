@@ -1,6 +1,6 @@
 # rpsls
 
-Implementation of Rock-Paper-Scissors-Lizard-Spock in Python
+Implementation of Rock-Paper-Scissors-Lizard-Spock
 
 ![Image of rpsls](http://upload.wikimedia.org/wikipedia/commons/f/fe/Rock_Paper_Scissors_Lizard_Spock_en.svg)
 
